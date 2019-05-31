@@ -18,6 +18,7 @@ Following information should be displayed:
 * Title of the job.
 * Name of the company the job belongs to.
 * Description of the job.
+* Location.
 * Date and Time the job was published. 
 
 The list should be sorted in descending order by the date the jobs were published.
@@ -95,6 +96,12 @@ Simply execute `php artisan migrate:fresh --seed` to migrate the database and fi
 After that you can connect to your database and check whether there is a `jobs` and a `companies` table with fake data.
 
 ## Let's build something
+
+Make sure you have started up the Laravel Development Server with `php artisan serve`.
+I recommend running `npm run watch` which automatically refreshes you frontend stuff like JS and SCSS when something changes.
+As a result you just need to refresh your browser window and can inspect your changes.
+
+The project already contains the necessary models `Job` and `Company` with the attributes. 
 
 Happy coding :)
 
