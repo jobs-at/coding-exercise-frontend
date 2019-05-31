@@ -101,7 +101,9 @@ Make sure you have started up the Laravel Development Server with `php artisan s
 I recommend running `npm run watch` which automatically refreshes you frontend stuff like JS and SCSS when something changes.
 As a result you just need to refresh your browser window and can inspect your changes.
 
-The project already contains the necessary models `Job` and `Company` with the attributes. 
+The project already contains the necessary models `Job.php` and `Company.php` (you can find them in the `app` folder)
+with the attributes from the database.
+The [Laravel documentation](https://laravel.com/docs/5.8) will also help you along the way.  
 
 Happy coding :)
 
