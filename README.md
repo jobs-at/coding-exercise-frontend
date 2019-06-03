@@ -1,14 +1,17 @@
 # jobs.at coding exercise
 
 We're happy you applied for a job as full-stack developer at jobs.at :)
-Before you can get started at jobs.at, we have a small exercise for you where you can show use your skills
+Before you can get started at jobs.at, we have a small exercise for you where you can show us your skills
 as full-stack developer.
 
 ## Exercise description
 
 At jobs.at we obviously have to deal a lot of with jobs, companies and people who are looking for a job.
 We want you to create a small web app where the user can find jobs he/she is interested in. Moreover, there should
-be the possibility to publish a new job and make it available to potential candidates.
+be the possibility to publish a new job and make it available to potential candidates. 
+
+Consider to put about 2-4 hours of work into the exercise. It is not necessary to spend 5 or more hours to get some result.
+If you cannot complete all the tasks, don't mind to send us the results you have. 
 
 ## Tasks to be done 
 
@@ -68,7 +71,9 @@ Check you installation with `composer --version`.
 
 Now, you are already setup to run this project for the first time. 
 
-1. Run `git clone https://github.com/jobs-at/coding-exercise.git coding-exercise` to clone the repository to your machine.
+1. Get the playground to your machine by either
+* Forking the repository into your github account (preferred).
+* If for whatever reason you do not have a Github account run `git clone https://github.com/jobs-at/coding-exercise.git coding-exercise` to clone the repository to your machine.
 2. Run `cd coding-exercise` to change to the project folder.
 3. Run `php artisan serve` to startup the development server.
 4. Open http://localhost:8000/ in your browser.
@@ -125,12 +130,18 @@ be the exception.
 
 The project already contains the necessary models `Job.php` and `Company.php` (you can find them in the `app` folder)
 with the attributes from the database. Behind the scenes an OR mapper (Eloquent) uses these Model classes to ease the communication
-with the database. The [Laravel documentation](https://laravel.com/docs/5.8) will help you along the way.
+with the database. An HTTP controller `JobController` which returns a sample HTML site has been created as starting point for you. 
+Tip: The [Laravel documentation](https://laravel.com/docs/5.8) will help you along the way as it has a very thorough documentation.
 
 Regarding the frontend, following things should be considered:
 * The project includes some libraries like [bootstrap](https://getbootstrap.com/) and [jquery](https://jquery.com/) which might
 be helpful. Feel free to use them if you want.
 * We do not expect a fancy UI design but keep mobile-first in mind when layouting the pages.
+
+## How to submit
+The preferred option is to send us your Github account with the forked repository.
+If you do not have one, please send us your result either as ZIP archive or by sharing a link to some other cloud service
+where you have stored it. 
 
 We are already curious about your results. Let's build something.   
 
