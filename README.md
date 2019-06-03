@@ -17,31 +17,34 @@ If you cannot complete all the tasks, don't mind to send us the results you have
 
 1. The home page should initially show a list of all recent jobs (the ones which were published within last week).
 
-Following information should be displayed:
-* Title of the job.
-* Name of the company the job belongs to.
-* Description of the job.
-* Location.
-* Date and Time the job was published (format: yyyy-MM-dd HH:mm:ss)
+   Following information should be displayed:
+   * Title of the job.
+   * Name of the company the job belongs to.
+   * Description of the job.
+   * Location.
+   * Date and Time the job was published (format: yyyy-MM-dd HH:mm:ss)
 
-The list should be sorted in descending order by the date the jobs were published.
-A job can either be active or inactive if taken by an applicant. As a user I want to see visually which job is active
-and which one inactive. Think about how this can look in the UI and implement it.
+   The list should be sorted in descending order by the date the jobs were published.
+   A job can either be active or inactive if taken by an applicant. As a user I want to see visually which job is active
+   and which one inactive. Think about how this can look in the UI and implement it.
 
 2. An input field should be provided where the user can search for a job by its title. As the user keeps typing
 the list of jobs should be adapted on demand based on the search value. The filtering should be done solely on the client
 side in order to provide a good user experience. 
 
 3. By pressing an "Add" button a new page with a form should be shown where the user can enter a new job.
-The form should contain
-* an input field for the title of the job
-* a dropdown with the names of the companies to select the company the job should belong to
-* a textarea to enter a description for the job
-* a "Save" and a "Cancel" button
+   The form should contain
+   * an input field for the title of the job
+   * a dropdown with the names of the companies to select the company the job should belong to
+   * a textarea to enter a description for the job
+   * a "Save" and a "Cancel" button
   
-By pressing "Cancel" the user should be redirected to the home page.
-By pressing "Save" the job should be saved to the database, then the user should be redirected to the homepage
-and the new job should be shown as first one in the job listing. 
+   By pressing "Cancel" the user should be redirected to the home page.
+   By pressing "Save" the job should be saved to the database, then the user should be redirected to the homepage
+   and the new job should be shown as first one in the job listing. 
+   
+   Extra task: If you have some time remaining, try to implement a simple validation which shows the user an error
+   if the job title is longer than 50 characters. 
 
 ## Project Setup
 
@@ -56,24 +59,24 @@ next section. If you decide to use a different technology stack than we provide,
 
 1. Make sure you have installed PHP.
 
-On Windows you can use [http://www.wampserver.com/en/](WAMP).
-On Mac OSX we recommend installing PHP via [https://brew.sh/index_de](Homebrew). Just execute `brew install php`.
-On Linux (Ubuntu) you can use `sudo apt-get install php`.
-Check your installation with `php -v`.
+   On Windows you can use [http://www.wampserver.com/en/](WAMP).
+   On Mac OSX we recommend installing PHP via [https://brew.sh/index_de](Homebrew). Just execute `brew install php`.
+   On Linux (Ubuntu) you can use `sudo apt-get install php`.
+   Check your installation with `php -v`.
 
 2. Install composer (the package manager for PHP)
 
-[Download and install](https://getcomposer.org/download/)
-If you are n Mac OSX you can also use `brew install composer`.
-Check you installation with `composer --version`.
+   [Download and install](https://getcomposer.org/download/)
+   If you are n Mac OSX you can also use `brew install composer`.
+   Check you installation with `composer --version`.
 
 ## Startup the project
 
 Now, you are already setup to run this project for the first time. 
 
 1. Get the playground to your machine by either
-* Forking the repository into your github account (preferred).
-* If for whatever reason you do not have a Github account run `git clone https://github.com/jobs-at/coding-exercise.git coding-exercise` to clone the repository to your machine.
+   * Forking the repository into your github account (preferred).
+   * If for whatever reason you do not have a Github account run `git clone https://github.com/jobs-at/coding-exercise.git coding-exercise` to clone the repository to your machine.
 2. Run `cd coding-exercise` to change to the project folder.
 3. Run `php artisan serve` to startup the development server.
 4. Open http://localhost:8000/ in your browser.
@@ -142,6 +145,8 @@ be helpful. Feel free to use them if you want.
 The preferred option is to send us your Github account with the forked repository.
 If you do not have one, please send us your result either as ZIP archive or by sharing a link to some other cloud service
 where you have stored it. 
+
+If you have any questions do not hesitate to contact us.
 
 We are already curious about your results. Let's build something.   
 
