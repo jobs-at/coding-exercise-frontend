@@ -13,6 +13,6 @@ $factory->define(Job::class, function (Faker $faker) {
         'description' => $faker->text,
         'location' => $faker->city,
         'active' => true,
-        'created_at' => Carbon::now()->subDays(rand(1, 20))
+        'published_at' => Carbon::now()->subDays(rand(1, 20))
     ];
 });

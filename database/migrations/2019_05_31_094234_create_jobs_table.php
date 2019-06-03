@@ -24,7 +24,8 @@ class CreateJobsTable extends Migration
             $table->string('description');
             $table->string('location');
             $table->boolean('active')->default(1);
-            $table->timestamps();
+            $table->timestamp('published_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

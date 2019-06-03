@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
+    const CREATED_AT = 'published_at';
+
     /**
      * The attributes that are mass assignable.
      *
