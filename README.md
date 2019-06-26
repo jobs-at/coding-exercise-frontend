@@ -79,8 +79,9 @@ Now, you are already setup to run this project for the first time.
    * If for whatever reason you do not have a Github account run `git clone https://github.com/jobs-at/coding-exercise.git coding-exercise` to clone the repository to your machine.
 2. Run `cd coding-exercise` to change to the project folder.
 3. Copy the content of `.env.example` to `.env` file.
-4. Run `php artisan serve` to startup the development server.
-5. Open http://localhost:8000/ in your browser.
+4. Run `php artisan generate:key` to generate the necessary application key which will be put automatically into you `.env` file. 
+5. Run `php artisan serve` to startup the development server.
+6. Open http://localhost:8000/ in your browser.
 
 ## Frontend development
 
