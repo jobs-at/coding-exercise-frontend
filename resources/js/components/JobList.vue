@@ -16,6 +16,12 @@
 
 <script>
     export default {
+        props: {
+            jobs: {
+                type: Array,
+                required: true
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }

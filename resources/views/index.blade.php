@@ -13,9 +13,9 @@
     </head>
     <body>
         <h1>jobs.at coding exercise</h1>
-        <h2>TODO: Your work</h2>
+
         <div id="app">
-            <example-component></example-component>
+            <job-list :jobs='@json($jobs)'></job-list>
         </div>
 
         <script src="js/app.js" defer></script>
