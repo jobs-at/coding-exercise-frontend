@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Job::class, function (Faker $faker) {
-    $possibleLocations = ['Linz', 'Wien', 'Graz', 'Salzburg', 'Innsbruck'];
+    $possibleLocations = ['Linz', 'Vienna', 'Graz', 'Salzburg', 'Innsbruck'];
 
     return [
         'title' => $faker->jobTitle,

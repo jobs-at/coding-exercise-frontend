@@ -44,16 +44,16 @@ our jobs can only have one of five locations, namely "Linz", "Vienna", "Graz", "
 these locations in your sidebar component.
 
 4. Secondly the user should also be able to search for jobs from specific companies. Therefore, add the available companies
-as selectable options in the sidebar. We have already implemented an endpoint for you which you gets you the names of the 
+as selectable options in the sidebar. We have already implemented an endpoint for you which gets you the names of the 
 companies. Only the jobs of the companies selected in the sidebar should the be shown in the list.
 
 For all the filter options, the list in the UI should automatically update without a page refresh.
 
-[https://drive.google.com/open?id=1LNf1n1k8JtmjdAwx_k5vEwj4Cc1WZ37v](UI-Mockup)
+[UI-Mockup](https://drive.google.com/open?id=1LNf1n1k8JtmjdAwx_k5vEwj4Cc1WZ37v)
 
 ## Project Setup
 
-In order to get you started quickly we have created a basic project setup for you. It uses the PHP web framework [https://laravel.com](Laravel),
+In order to get you started quickly we have created a basic project setup for you. It uses the PHP web framework [Laravel](https://laravel.com),
 which we also use at jobs.at for our projects. It gives you a great starting point to prototype a web app with Vue, HTML, CSS and JavaScript. 
 
 ## Requirements to run this project
@@ -62,8 +62,8 @@ next section. If you decide to use a different technology stack than we provide,
 
 1. Make sure you have installed PHP.
 
-   On Windows you can use [http://www.wampserver.com/en/](WAMP).
-   On Mac OSX we recommend installing PHP via [https://brew.sh/index_de](Homebrew). Just execute `brew install php`.
+   On Windows you can use [WAMP](http://www.wampserver.com/en/).
+   On Mac OSX we recommend installing PHP via [Homebrew](https://brew.sh/index_de). Just execute `brew install php`.
    On Linux (Ubuntu) you can use `sudo apt-get install php`.
    Check your installation with `php -v`.
 
@@ -129,19 +129,20 @@ Info: You do not have to pay attention to the `migrations` table.
 ## A few more tips before you start
 
 Make sure you have started up the Laravel Development Server with `php artisan serve`.
-I recommend running `npm run watch` which automatically refreshes you frontend stuff like HTML (Blade), Vue (.vue), JS and SCSS when something changes.
+I recommend running `npm run watch` which automatically refreshes you frontend resources like HTML (Blade), Vue (.vue), JS and SCSS when something changes.
 As a result you just need to refresh your browser window and can inspect your changes.
 If some change is not reflected in the browser you may have to rerun `npm run watch` at some point but this should actually
 be the exception. 
 
 The project already contains the necessary models `Job.php` and `Company.php` (you can find them in the `app` folder)
-with the attributes from the database. Behind the scenes an OR mapper (Eloquent) uses these Model classes to ease the communication
-with the database. An HTTP controller `JobController` as well as a `CompanyController` which returns the necessary data as JSON is provided as starting point. 
+with the attributes from the database. Behind the scenes an OR mapper ([Eloquent](https://laravel.com/docs/5.8/eloquent)) uses these Model classes to ease the communication
+with the database. An HTTP controller `JobController` as well as a `CompanyController` which returns the companies as JSON payload is provided as starting point. 
 Tip: The [Laravel documentation](https://laravel.com/docs/5.8) and the [Vue.js documentation](https://vuejs.org/v2/guide/) will help you along the way as they have a very thorough documentation.
 
 Regarding the frontend, following things should be considered:
 * The project includes the UI toolkit [bootstrap](https://getbootstrap.com/) which might
-be helpful when layouting and styling your page. Feel free to use them if you want.
+be helpful when layouting and styling your page. Feel free to use them if you want. In order to enable them, you
+only have to comment in the CSS file in the `index.blade.php`.
 * We do not expect a fancy UI design but keep mobile-first and responsiveness in mind when layouting the pages.
 
 ## How to submit
