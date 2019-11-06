@@ -92,7 +92,6 @@ Now, you are already setup to run this project for the first time.
 The frontend build requires you to have Node installed. If you do not yet have Node installed, you can download and 
 install it from [here](https://nodejs.org/en/download/). On MacOSX you can use `brew install node` as well.
 Check your installation with `node -v` which should print the current node version. 
-You are free to use either `npm` or `yarn` as package manager for the frontend.  
 
 Now run 
 
