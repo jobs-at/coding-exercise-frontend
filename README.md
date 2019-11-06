@@ -16,7 +16,9 @@ If you cannot complete all the tasks, don't mind to send us the results you have
 ## Tasks to be done 
 
 1. The home page should initially show a list of all recent jobs (the ones which were published within last week).
-   The endpoint which delivers the data is already implemented and can be consumed. (see `index` controller action in `JobController.php`.
+   The endpoint which gets the data and passes it to the page is already implemented. 
+   (see `index` controller action in `JobController.php`). The `index.blade.php` is the home page which contains a dummy 
+   `JobList.vue` component as starting point for you.  
 
    Following information should be displayed:
    * Title of the job.
@@ -27,13 +29,16 @@ If you cannot complete all the tasks, don't mind to send us the results you have
 
    A job can either be active or inactive if taken by an applicant. As a user I want to see visually which job is active
    and which one inactive. Think about how this can look in the UI and implement it.
+   
+At the bottom of this section there is a link to a UI-Mockup, which shows you how the layout of the small web-app 
+should approximately look like.
 
 2. An input field should be provided where the user can search for a job by its title. As the user keeps typing
 the list of jobs should be adapted on demand based on the search pattern. The filtering should be done solely on the client
 side in order to provide a good user experience. The project setup contains [Vue.js](https://vuejs.org) 
 which should be used to build the filtering feature on the client side.
 
-3. According to the proposed UI mock-up, additional filter options should be provided to the user. Firstly, he/she should
+3. According to the proposed UI mock-up (see bottom of this section), additional filter options should be provided to the user. Firstly, he/she should
 be able to narrow down the search results based on the selected locations shown in the sidebar. For sake of simplicity
 our jobs can only have one of five locations, namely "Linz", "Vienna", "Graz", "Salzburg" and "Innsbruck". You can hard-code
 these locations in your sidebar component.
@@ -43,6 +48,8 @@ as selectable options in the sidebar. We have already implemented an endpoint fo
 companies. Only the jobs of the companies selected in the sidebar should the be shown in the list.
 
 For all the filter options, the list in the UI should automatically update without a page refresh.
+
+[https://drive.google.com/open?id=1LNf1n1k8JtmjdAwx_k5vEwj4Cc1WZ37v](UI-Mockup)
 
 ## Project Setup
 
