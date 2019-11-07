@@ -31,7 +31,7 @@ If you cannot complete all the tasks, don't mind to send us the results you have
    and which one inactive. Think about how this can look in the UI and implement it.
    
 At the bottom of this section there is a link to a UI-Mockup, which shows you how the layout of the small web-app 
-should approximately look like.
+should approximately look like. We only provide you the desktop mockup but you should also make sure, that the web-app has a good UI and UX on mobile. So please make the web-app responsive ;).
 
 2. An input field should be provided where the user can search for a job by its title. As the user keeps typing
 the list of jobs should be adapted on demand based on the search pattern. The filtering should be done solely on the client
