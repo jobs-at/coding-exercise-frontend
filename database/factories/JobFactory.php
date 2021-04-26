@@ -1,20 +1,29 @@
 <?php
 
-/* @var $factory Factory */
+namespace Database\Factories;
 
 use App\Job;
-use Carbon\Carbon;
-use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Job::class, function (Faker $faker) {
-    $possibleLocations = ['Linz', 'Vienna', 'Graz', 'Salzburg', 'Innsbruck'];
+class JobFactory extends Factory {
 
-    return [
-        'title' => $faker->jobTitle,
-        'description' => $faker->text,
-        'location' => $possibleLocations[array_rand($possibleLocations, 1)],
-        'active' => true,
-        'published_at' => Carbon::now()->subDays(rand(1, 20))
-    ];
-});
+    protected $model = Job::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $possibleLocations = ['Linz', 'Vienna', 'Graz', 'Salzburg', 'Innsbruck'];
+
+        return [
+            'title' => $this->faker->jobTitle,
+            'description' => $this->faker->text,
+            'location' => $possibleLocations[array_rand($possibleLocations, 1)],
+            'active' => true,
+            'published_at' => now()->subDays(rand(1, 20))
+        ];
+    }
+}

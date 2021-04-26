@@ -6,7 +6,11 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        <ul>
+                            <li v-for="job in jobs">
+                                {{ job.title }}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
