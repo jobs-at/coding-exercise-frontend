@@ -7,18 +7,19 @@ as full-stack web developer.
 ## Exercise description
 
 At jobs.at we obviously have to deal a lot of with jobs, companies and people who are looking for a job.
-We want you to create a small web app where the user can find jobs he/she is interested in. Moreover, there should
-be the possibility to publish a new job and make it available to potential candidates. 
+Thus, this coding challenge will also have to do with our main topic :) 
 
-Consider to put about 2-4 hours of work into the exercise. It is not necessary to spend 5 or more hours to get some result.
-If you cannot complete all the tasks, don't mind to send us the results you have. 
+We want you to create a small web app where the user can find jobs he/she is interested in. Moreover, there should
+be the possibility to publish a new job for an admin user and make it available to potential candidates. 
+The next section outlines the specific task we want you to do.
+If you cannot complete all the tasks, don't mind to send us the results you have. We'll discuss the coding challenge
+at the second interview with you together.  
 
 ## Tasks to be done 
 
 1. The home page should initially show a list of all recent jobs (the ones which were published within last week).
-   The endpoint which gets the data and passes it to the page is already implemented. 
-   (see `index` controller action in `JobController.php`). The `index.blade.php` is the home page which contains a dummy 
-   `JobList.vue` component as starting point for you.  
+   The `index.blade.php` is the home page which contains a dummy 
+   `JobList.vue` component as starting point for you.
 
    Following information should be displayed:
    * Title of the job.
@@ -31,34 +32,48 @@ If you cannot complete all the tasks, don't mind to send us the results you have
    and which one inactive. Think about how this can look in the UI and implement it.
    
 At the bottom of this section there is a link to a UI-Mockup, which shows you how the layout of the small web-app 
-should approximately look like. We only provide you the desktop mockup but you should also make sure, that the web-app has a good UI and UX on mobile. So please make the web-app responsive ;).
+should approximately look like. 
 
 2. An input field should be provided where the user can search for a job by its title. As the user keeps typing
-the list of jobs should be adapted on demand based on the search pattern. The filtering should be done solely on the client
+the list of jobs should be adapted immediately based on the search pattern. The filtering should be done solely on the client
 side in order to provide a good user experience. The project setup contains [Vue.js](https://vuejs.org) 
 which should be used to build the filtering feature on the client side.
 
 3. According to the proposed UI mock-up (see bottom of this section), additional filter options should be provided to the user. Firstly, he/she should
 be able to narrow down the search results based on the selected locations shown in the sidebar. For sake of simplicity
 our jobs can only have one of five locations, namely "Linz", "Vienna", "Graz", "Salzburg" and "Innsbruck". You can hard-code
-these locations in your sidebar component.
+these locations in your sidebar. If the user selects locations, the jobs in the list should be narrowed down to just the 
+jobs which fit the selected locations.
 
 4. Secondly the user should also be able to search for jobs from specific companies. Therefore, add the available companies
-as selectable options in the sidebar. We have already implemented an endpoint for you which gets you the names of the 
-companies. Only the jobs of the companies selected in the sidebar should the be shown in the list.
+as selectable options in the sidebar. All companies from the database should be shown in the sidebar.
+These should be loaded via a separate HTTP request. You can use the [axios HTTP client](https://github.com/axios/axios), 
+which is already included in the project.
+If the user selects a company, only the jobs which belong to this company should be shown in the list.
 
 For all the filter options, the list in the UI should automatically update without a page refresh.
 
+5. There should be a link on the home page, called "Add new job ad", which brings the user to a new page where he/she first needs
+to enter a password to confirm that he/she is an admin user. This password can simply be hard-coded and in plain text to keep
+it simple for this exercise. You can define any password on your own. If the user types in the correct password a form is shown where he/she can enter a new job ad.
+If the password was incorrect, an error should be shown.
+
+On the target page with the form there should be according input fields for title, description and location of the job as well as a dropdown list with the
+available companies. When the user fills in all the data and hits the "Save" button, a new job should be saved to the database 
+and the user should get redirected to the home page with the full list of jobs afterwards. All the attributes of the job 
+are mandatory and if the user tries to submit an incomplete form, an error should be shown.
+
+Here is a UI mockup of the home page to give you a hint about the layout. 
 [UI-Mockup](https://drive.google.com/open?id=1LNf1n1k8JtmjdAwx_k5vEwj4Cc1WZ37v)
 
 ## Project Setup
 
 In order to get you started quickly we have created a basic project setup for you. It uses the PHP web framework [Laravel](https://laravel.com),
-which we also use at jobs.at for our projects. It gives you a great starting point to prototype a web app with Vue, HTML, CSS and JavaScript. 
+which we also use at jobs.at for our projects. It gives you a great starting point to prototype a web app with PHP, Vue, HTML, CSS and JavaScript. 
 
 ## Requirements to run this project
 If you have PHP, composer and Node installed on your machine can skip the the following two steps and continue with the
-next section. If you decide to use a different technology stack than we provide, you can turn directly to the database setup.
+next section. 
 
 1. Make sure you have installed PHP.
 
@@ -103,21 +118,18 @@ to reload your browser window after a change.
 ## Database
 
 In order to make the user experience more realistic the project uses a MySql database to store the jobs and companies
-needed to complete the exercise. You therefore need to start a MySql database on your machine. 
+needed to complete the exercise. You therefore need to start a MySql database on your computer. 
 
-If you have installed [Docker](https://docs.docker.com/), simply execute the following command to startup MySql, setup
-the database and user needed and make it available on default port 3306.
+If have MySql installed on your machine, add a new database called `coding-exercise`. The default user
+for this project is `root` with an empty password. If you want to use a different mysql user, change the config in your
+`.env` file.
 
-`docker run -p3306:3306 --name coding-exercise -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=coding-exercise -e MYSQL_USER=coding-exercise -e MYSQL_PASSWORD=iwanttocode -d mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci`
-
-If you do not have installed Docker, don't want to install it or want to use you local MySql, you need the following.
-* Make sure to use the default port `3306`.
-* A database `coding-exercise`.
-* A user `coding-exercise` with the password `iwanttocode` who has all privileges on this database.
+If you don't yet have MySql installed, you can download it from [here](https://dev.mysql.com/downloads/mysql/) and follow the instructions.
+If you are on Mac, you can install it via `brew install mysql` or on Linux (Ubuntu) via `sudo apt-get install mysql-server` for instance.
 
 ## Job and company sample data
 
-We have created database migrations and a seeder for you to build up the database as you will need it automatically.
+We have created database migrations and a seeder for you to build up the database quickly.
 It also populates it with sample data (jobs and companies) so you do not have to manually enter any test data from scratch.
 
 Simply execute `php artisan migrate:fresh --seed` to migrate the database and fill it with data.
@@ -136,8 +148,8 @@ be the exception.
 
 The project already contains the necessary models `Job.php` and `Company.php` (you can find them in the `app` folder)
 with the attributes from the database. Behind the scenes an OR mapper ([Eloquent](https://laravel.com/docs/5.8/eloquent)) uses these Model classes to ease the communication
-with the database. An HTTP controller `JobController` as well as a `CompanyController` which returns the companies as JSON payload is provided as starting point. 
-Tip: The [Laravel documentation](https://laravel.com/docs/5.8) and the [Vue.js documentation](https://vuejs.org/v2/guide/) will help you along the way as they have a very thorough documentation.
+with the database. An HTTP controller named `JobController.php` is provided as starting point. 
+Tip: The [Laravel documentation](https://laravel.com/docs/8.x) and the [Vue.js documentation](https://vuejs.org/v2/guide/) will help you along the way as they have a very thorough documentation.
 
 Regarding the frontend, following things should be considered:
 * The project includes the UI toolkit [bootstrap](https://getbootstrap.com/) which might
@@ -152,6 +164,6 @@ where you have stored it.
 
 If you have any questions do not hesitate to contact us.
 
-We are already curious about your results. Let's build something.   
+We are already curious about your results.
 
 Happy coding :)

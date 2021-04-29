@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $companies = Company::factory()->count(3)->create();
 
         foreach ($companies as $company) {
-            Job::factory()->create(['company_id' => $company]);
+            Job::factory()->count(10)->create(['company_id' => $company]);
         }
     }
 }

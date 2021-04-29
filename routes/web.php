@@ -12,4 +12,3 @@
 */
 
 Route::get('/', 'JobController@index');
-Route::get('/companies', 'CompanyController@index');
