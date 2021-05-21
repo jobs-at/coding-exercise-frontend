@@ -54,9 +54,10 @@ If the user selects a company, only the jobs which belong to this company should
 For all the filter options, the list in the UI should automatically update without a page refresh.
 
 5. There should be a link on the home page, called "Add new job ad", which brings the user to a new page where he/she first needs
-to enter a password to confirm that he/she is an admin user. This password can simply be hard-coded and in plain text to keep
-it simple for this exercise. You can define any password on your own. If the user types in the correct password a form is shown where he/she can enter a new job ad.
-If the password was incorrect, an error should be shown.
+to login with email and password to confirm that he/she is an admin user. If the user types in the correct password a form is shown where he/she can enter a new job ad.
+If the password was incorrect, an error should be shown. There shouldn't be a way to register as admin user on the frontend because only you as super administrator should have the power to create and authorize such admin users.
+Think about and implement an easy mechanism to create an admin user via a simple command executed on the command line.
+Only email and password are required as attributes. Keep security of admin users in mind.  
 
 On the target page with the form there should be according input fields for title, description and location of the job as well as a dropdown list with the
 available companies. When the user fills in all the data and hits the "Save" button, a new job should be saved to the database 
@@ -94,7 +95,7 @@ Now, you are already setup to run this project for the first time.
 
 1. Get the playground to your machine by either
    * Forking the repository into your github account (preferred).
-   * If for whatever reason you do not have a Github account run `git clone https://github.com/jobs-at/coding-exercise.git coding-exercise` to clone the repository to your machine.
+   * If for whatever reason you do not have a Github account run `git clone https://github.com/jobs-at/coding-exercise-frontend.git coding-exercise` to clone the repository to your machine.
 2. Run `cd coding-exercise` to change to the project folder.
 3. Run `composer install` to install all PHP dependencies.
 4. Copy the content of `.env.example` to `.env` file.
