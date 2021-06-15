@@ -19,4 +19,9 @@ class Job extends Model
     protected $fillable = [
         'title', 'description', 'location', 'status',
     ];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
