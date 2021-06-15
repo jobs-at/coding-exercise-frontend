@@ -1,0 +1,32 @@
+@mixin font($weight) {
+    @if $weight == 'regular' {
+        font-family: 'Oswald', Arial ,Helvetica, sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else if $weight == 'medium' {
+        font-family: 'Oswald', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else if $weight == 'bold' {
+        font-family: 'Oswald', Arial , Helvetica, sans-serif;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@mixin font-Lato($weight) {
+    @if $weight == 'regular' {
+        font-family: 'Lato', Arial ,Helvetica, sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else if $weight == 'bold' {
+        font-family: 'Lato', Arial , Helvetica, sans-serif;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}

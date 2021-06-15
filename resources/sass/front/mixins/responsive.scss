@@ -1,0 +1,52 @@
+// Mobile
+@mixin responsive_mobile(){
+    @media only screen and (max-width: $break-mobile){
+        @content
+    }
+}
+
+// Tablet
+@mixin responsive_tablet(){
+    @media only screen and (min-width: $break-mobile) and (max-width: $break-tablet){
+        @content
+    }
+}
+
+
+// Ipad Pro
+@mixin responsive_ipad_pro(){
+    @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+        @content
+    }
+}
+
+
+// Variable
+@mixin responsive_variable($minWidth, $maxWidth){
+    @media only screen and (min-width: $minWidth) and (max-width: $maxWidth){
+        @content
+    }
+}
+
+
+/* ----------------------------------------------------------------------------- Landscape ----------- */
+/* Smartphones ----------- */
+@mixin responsive_mobile_landscape(){
+    @media only screen and (min-width : 321px) {
+        @content
+    }
+}
+
+/* iPads ----------- */
+@mixin responsive_tablet_landscape(){
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        @content
+    }
+}
+
+/* iPad pro ----------- */
+@mixin responsive_tablet_pro_landscape(){
+    @media only screen and (min-device-width: 1366px) and (max-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape)  {
+        @content
+    }
+}

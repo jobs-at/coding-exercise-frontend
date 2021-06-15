@@ -1,0 +1,18 @@
+.search {
+    position: relative;
+
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-58%);
+
+        i {
+
+            &::before {
+                font-size: 16px;
+                color: $black;
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    
+    @include responsive_mobile(){
+    
+    }
+    
+    @include responsive_tablet(){
+    
+    }
+    
+    @include responsive_ipad_pro(){
+    
+    }
+    
+    @include responsive_variable(600px,800px){
+    
+    }
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+
+.elementor-heading-title{
+    
+    
+    @include responsive_mobile(){
+    
+    }
+    
+    
+    @include responsive_tablet(){
+    
+    }
+    
+    @include responsive_ipad_pro(){
+    
+    }
+    
+    @include responsive_variable(600px,800px){
+        background-color : orangered!important;
+    }
+}

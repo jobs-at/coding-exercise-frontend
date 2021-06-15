@@ -10,7 +10,7 @@
     "devDependencies": {
         "@popperjs/core": "^2.9.2",
         "axios": "^0.21.1",
-        "bootstrap": "^4.6.0",
+        "bootstrap": "^5.0.0-beta3",
         "cross-env": "^7.0.3",
         "jquery": "^3.6",
         "laravel-mix": "^6.0.19",
@@ -22,5 +22,8 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.9.7",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "font-awesome": "^4.7.0"
     }
 }

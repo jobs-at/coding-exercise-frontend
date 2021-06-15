@@ -1,0 +1,43 @@
+/*  Paragraph  */
+p {
+    //@include font('regular');
+    line-height: 26px;
+}
+
+/*  Links  */
+a {
+    //@include font('regular');
+
+    &:hover {
+
+    }
+}
+
+/*  Ul List  */
+ul {
+
+    li {
+
+    }
+}
+
+/*  Table  */
+table{
+    
+    thead{
+        
+        th{
+        
+        }
+    }
+    
+    tbody{
+        tr{
+            
+            td{
+            
+            }
+        }
+    }
+    
+}
