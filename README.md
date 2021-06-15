@@ -48,16 +48,16 @@ jobs which fit the selected locations.
 4. Secondly the user should also be able to search for jobs from specific companies. Therefore, add the available companies
 as selectable options in the sidebar. All companies from the database should be shown in the sidebar.
 These should be loaded via a separate HTTP request. You can use the [axios HTTP client](https://github.com/axios/axios), 
-which is already included in the project.
+which is already included in the project and registered on the `window` object. So you can use it right away.
 If the user selects a company, only the jobs which belong to this company should be shown in the list.
 
 For all the filter options, the list in the UI should automatically update without a page refresh.
 
 5. There should be a link on the home page, called "Add new job ad", which brings the user to a new page where he/she first needs
-to login with email and password to confirm that he/she is an admin user. If the user types in the correct password a form is shown where he/she can enter a new job ad.
-If the password was incorrect, an error should be shown. There shouldn't be a way to register as admin user on the frontend because only you as super administrator should have the power to create and authorize such admin users.
-Think about and implement an easy mechanism to create an admin user via a simple command executed on the command line.
-Only email and password are required as attributes. Keep security of admin users in mind.  
+to provide a password to confirm that he/she is an admin user. If the user types in the correct password a form is shown where he/she can enter a new job ad.
+If the password was incorrect, an error should be shown and the user should not get redirected to the next page with the form.
+You are not required to follow any security best practices like you would have to do in a real productive app. You can simply
+hard-code the admin password and compare against it in the frontend. This means, you don't have to do a request to the backend to validate it.   
 
 On the target page with the form there should be according input fields for title, description and location of the job as well as a dropdown list with the
 available companies. When the user fills in all the data and hits the "Save" button, a new job should be saved to the database 
@@ -148,7 +148,7 @@ If some change is not reflected in the browser you may have to rerun `npm run wa
 be the exception. 
 
 The project already contains the necessary models `Job.php` and `Company.php` (you can find them in the `app` folder)
-with the attributes from the database. Behind the scenes an OR mapper ([Eloquent](https://laravel.com/docs/5.8/eloquent)) uses these Model classes to ease the communication
+with the attributes from the database. Behind the scenes an OR mapper ([Eloquent](https://laravel.com/docs/8.x/eloquent)) uses these Model classes to ease the communication
 with the database. An HTTP controller named `JobController.php` is provided as starting point. 
 Tip: The [Laravel documentation](https://laravel.com/docs/8.x) and the [Vue.js documentation](https://vuejs.org/v2/guide/) will help you along the way as they have a very thorough documentation.
 
@@ -159,6 +159,9 @@ only have to comment in the CSS file in the `index.blade.php`.
 * We do not expect a fancy UI design but keep mobile-first and responsiveness in mind when layouting the pages.
 
 ## How to submit
+You should send your submission to [juergen.ratzenboeck@jobs.at](mailto:juergen.ratzenboeck@jobs.at?subject=[jobs.at Coding Challenge Submision])
+at latest five hours before the second interview so that I can take a look at it in advance.
+
 The preferred option is to send us a link to the forked repository in your Github account.
 If you do not have one, please send us your result either as ZIP archive or by sharing a link to some other cloud service
 where you have stored it. 
