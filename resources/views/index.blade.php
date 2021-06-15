@@ -8,7 +8,7 @@
         <!-- Fonts -->
 
         <!-- Comment in the following line, if you want to use bootstrap and/or global styles -->
-{{--        <link rel="stylesheet" href="css/app.css">--}}
+{{--        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">--}}
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
@@ -18,7 +18,7 @@
             <job-list :jobs='@json($jobs)'></job-list>
         </div>
 
-        <script src="js/app.js" defer></script>
+        <script src="{{ mix('/js/app.js') }}" defer></script>
     </body>
 </html>
 
