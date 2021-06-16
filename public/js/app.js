@@ -4949,6 +4949,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4978,15 +5019,75 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      search: '',
+      allJobs: [],
+      companies: [],
+      selectedCompanies: [],
+      locations: [],
+      selectedLocations: []
+    };
+  },
   props: {
     jobs: {
       type: Array,
       required: true
     }
   },
-  created: function created() {},
-  mounted: function mounted() {
-    console.log(this.jobs);
+  methods: {
+    Search: function Search() {
+      var _this = this;
+
+      // Selected Companies & Locations from Filter
+      var selectedCompanies = JSON.parse(JSON.stringify(this.selectedCompanies)),
+          selectedLocations = JSON.parse(JSON.stringify(this.selectedLocations)); // select paramether from input
+
+      var param = this.search ? this.search : '-'; // Send Data to API
+
+      axios.post('/api/v1/jobsearch/' + param).then(function (response) {
+        // All the fetched Data
+        var JobsAfterSearch = response.data.data; // Company Filter
+
+        if (selectedCompanies.length) {
+          JobsAfterSearch = JobsAfterSearch.filter(function (job) {
+            if (selectedCompanies.includes(job.company)) {
+              return job;
+            }
+          });
+        } // Location Filter
+
+
+        if (selectedLocations.length) {
+          JobsAfterSearch = JobsAfterSearch.filter(function (job) {
+            if (selectedLocations.includes(job.location)) {
+              return job;
+            }
+          });
+        } // Rendering the fetched Data
+
+
+        _this.allJobs = JobsAfterSearch;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  },
+  created: function created() {
+    // Get all the jobs
+    this.allJobs = this.jobs; // Get all Company names
+
+    this.companies = _toConsumableArray(new Set(this.allJobs.map(function (value) {
+      return value['company'];
+    }))); // Get all the locations
+
+    this.locations = _toConsumableArray(new Set(this.allJobs.map(function (value) {
+      return value['location'];
+    })));
+  },
+  mounted: function mounted() {},
+  watch: {
+    search: function search() {}
   }
 });
 
@@ -41080,47 +41181,216 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-4 sidebar" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [_vm._v("Categories")])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-4 sidebar" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [_vm._v("Filter")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "div",
+              { staticClass: "locations mb-4" },
+              [
+                _c("h5", [_vm._v("Locations")]),
+                _vm._v(" "),
+                _vm._l(_vm.locations, function(location) {
+                  return _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.selectedLocations,
+                          expression: "selectedLocations"
+                        }
+                      ],
+                      attrs: { type: "checkbox", id: location },
+                      domProps: {
+                        value: location,
+                        checked: Array.isArray(_vm.selectedLocations)
+                          ? _vm._i(_vm.selectedLocations, location) > -1
+                          : _vm.selectedLocations
+                      },
+                      on: {
+                        change: [
+                          function($event) {
+                            var $$a = _vm.selectedLocations,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = location,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  (_vm.selectedLocations = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.selectedLocations = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.selectedLocations = $$c
+                            }
+                          },
+                          function($event) {
+                            return _vm.Search()
+                          }
+                        ]
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: location } }, [
+                      _vm._v(" " + _vm._s(location))
+                    ])
+                  ])
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "companies" },
+              [
+                _c("h5", [_vm._v("Company")]),
+                _vm._v(" "),
+                _vm._l(_vm.companies, function(company) {
+                  return _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.selectedCompanies,
+                          expression: "selectedCompanies"
+                        }
+                      ],
+                      attrs: { type: "checkbox", id: company },
+                      domProps: {
+                        value: company,
+                        checked: Array.isArray(_vm.selectedCompanies)
+                          ? _vm._i(_vm.selectedCompanies, company) > -1
+                          : _vm.selectedCompanies
+                      },
+                      on: {
+                        change: [
+                          function($event) {
+                            var $$a = _vm.selectedCompanies,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = company,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  (_vm.selectedCompanies = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.selectedCompanies = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.selectedCompanies = $$c
+                            }
+                          },
+                          function($event) {
+                            return _vm.Search()
+                          }
+                        ]
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: company } }, [
+                      _vm._v(" " + _vm._s(company))
+                    ])
+                  ])
+                })
+              ],
+              2
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [_vm._v("Job List")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body jobs-list" }, [
+            _c("div", { staticClass: "search" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search"
+                  }
+                ],
+                staticClass: "form-control search-input",
+                attrs: { type: "text", placeholder: "Beruf", name: "" },
+                domProps: { value: _vm.search },
+                on: {
+                  keypress: function($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.Search()
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("a", { staticClass: "search-icon", attrs: { href: "#" } }, [
+                _c("i", {
+                  staticClass: "fa fa-search",
+                  on: {
+                    click: function($event) {
+                      return _vm.Search()
+                    }
+                  }
+                })
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "search" }, [
-                _c("input", {
-                  staticClass: "form-control search-input",
-                  attrs: { type: "text", placeholder: "Search", name: "" }
-                }),
-                _vm._v(" "),
-                _c("a", { staticClass: "search-icon", attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-search" })
+            _c(
+              "div",
+              { staticClass: "jobs-wrapper" },
+              _vm._l(_vm.allJobs, function(job) {
+                return _c("div", { staticClass: "job-item p-2 mt-2 mb-2" }, [
+                  _c("a", { attrs: { href: "/jobs/" + job.id } }, [
+                    _vm._v(_vm._s(job.title))
+                  ]),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v(_vm._s(job.company))]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(job.location))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(job.description))]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(job.datetime))])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "jobs-wrapper" })
-            ])
+              }),
+              0
+            )
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

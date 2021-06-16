@@ -15309,16 +15309,19 @@ p {
 /* DROPDOWNS */
 /* LAYOUT */
 /* COMPONENTS */
-.search {
+.jobs-list .search {
   position: relative;
 }
-.search .search-icon {
+.jobs-list .search .search-input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.jobs-list .search .search-icon {
   position: absolute;
   top: 50%;
   right: 12px;
   transform: translateY(-58%);
 }
-.search .search-icon i::before {
+.jobs-list .search .search-icon i::before {
   font-size: 16px;
   color: #000000;
 }

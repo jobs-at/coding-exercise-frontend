@@ -24,5 +24,7 @@
         Route::get('/jobs' , [JobController::class , 'getAllJobs']);   // All Jobs
 
         Route::get('/jobs/{job}' , [JobController::class , 'getJobDetail']);   // Single Job (Detail)
+
+        Route::post('/jobsearch/{keyword}', [JobController::class , 'searchJob']);
     });
 

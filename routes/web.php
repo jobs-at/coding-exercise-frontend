@@ -13,6 +13,9 @@
 
 Route::get('/', 'JobController@index');
 
+Route::get('/jobs/{job}', 'JobController@getJobDetail')->name('job-detail');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

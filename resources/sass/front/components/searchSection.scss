@@ -1,17 +1,37 @@
-.search {
-    position: relative;
+.jobs-list{
 
-    .search-icon {
-        position: absolute;
-        top: 50%;
-        right: 12px;
-        transform: translateY(-58%);
+    .search {
+        position: relative;
 
-        i {
+        .search-input{
 
-            &::before {
-                font-size: 16px;
-                color: $black;
+            &::-webkit-calendar-picker-indicator {
+                display: none;
+            }
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-58%);
+
+            i {
+
+                &::before {
+                    font-size: 16px;
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .jobs-wrapper{
+
+        .job-item{
+
+            a{
+
             }
         }
     }

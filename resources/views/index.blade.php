@@ -22,12 +22,14 @@
             </div>
         </div>
 
-
-        <div id="app">
-            <job-list :jobs='@json($jobs)'></job-list>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="app">
+                    <job-list :jobs='@json($jobs)'></job-list>
+                </div>
+            </div>
         </div>
-        <script src="{{ mix('/js/app.js') }}" defer></script>
-        <script src="dist/app.js" type="text/javascript"></script>
 
+        <script src="{{ mix('/js/app.js') }}" defer></script>
     </body>
 </html>

@@ -25,8 +25,8 @@
                         'location'     => $item->location ,
                         'active'       => $item->active ,
                         'published_at' => $item->published_at ,
-                        'datetime'     => Carbon::parse($item->created_at)->format('Y-M-d HH:mm:ss') ,
-                        'company'      => new Company($item->company)
+                        'datetime'     => Carbon::parse($item->created_at)->format('Y-m-d H:m:s') ,
+                        'company'      => $item->company->name
                     ];
                 })
             ];
