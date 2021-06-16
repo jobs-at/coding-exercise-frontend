@@ -2,10 +2,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 sidebar">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">Filter</div>
                     <div class="card-body">
-
                         <div class="locations mb-4">
                             <h5>Locations</h5>
                             <div v-for="location in locations">
@@ -14,7 +13,7 @@
                                 <label :for="location"> {{ location }}</label>
                             </div>
                         </div>
-                        <div class="companies">
+                        <div class="companies mb-4">
                             <h5>Company</h5>
 
                             <div v-for="company in companies">
@@ -23,8 +22,17 @@
                                 <label :for="company"> {{ company }}</label>
                             </div>
 
-
                         </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Add new Job</div>
+                    <div class="card-body">
+                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Commodi corporis minima molestias quasi! Ad alias dolor enim harum,
+                            ipsa mollitia nihil nisi officiis pariatur quam rerum sint tempore ullam velit?</p>
+                        <a class="btn btn-dark btn-block w-100" href="/job/create">Add new job ad</a>
                     </div>
                 </div>
             </div>
@@ -45,6 +53,7 @@
                                 <span>{{ job.location }}</span>
                                 <p>{{ job.description }}</p>
                                 <span>{{ job.datetime }}</span>
+                                <span v-if="job.active"> Active </span>
                             </div>
                         </div>
 

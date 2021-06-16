@@ -6,6 +6,7 @@ use App\Job;
 use App\Http\Resources\v1\Job as JobResource;
 use App\Http\Resources\v1\JobCollection;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -54,6 +55,12 @@ class JobController extends Controller
     }
 
 
+    /**
+     * Search job
+     *
+     * @param $keyword
+     * @return JobCollection
+     */
     public function searchJob($keyword)
     {
 
@@ -76,6 +83,18 @@ class JobController extends Controller
     public function getJobDetail(Job $job)
     {
         return new JobResource($job);
+    }
+
+    public function create(){
+
+        $locations = Job::select('location')->distinct('location')->get();
+
+        return view('job-register',compact('locations'));
+    }
+
+    public function store(Request $request)
+    {
+        return $request;
     }
 
 

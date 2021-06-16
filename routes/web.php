@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', 'JobController@index');
+Route::get('/', 'JobController@index')->name('jobs');;
 
 Route::get('/jobs/{job}', 'JobController@getJobDetail')->name('job-detail');
 
+Route::get('/job/create', 'JobController@create')->name('job-create')->middleware(['auth','auth.admin']);
+Route::post('/job/create', 'JobController@store')->name('job-store');
 
 Auth::routes();
 

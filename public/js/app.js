@@ -5018,6 +5018,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -41184,7 +41193,7 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-4 sidebar" }, [
-        _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card mb-4" }, [
           _c("div", { staticClass: "card-header" }, [_vm._v("Filter")]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
@@ -41252,7 +41261,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "companies" },
+              { staticClass: "companies mb-4" },
               [
                 _c("h5", [_vm._v("Company")]),
                 _vm._v(" "),
@@ -41312,7 +41321,9 @@ var render = function() {
               2
             )
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-8" }, [
@@ -41379,7 +41390,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", [_vm._v(_vm._s(job.description))]),
                   _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(job.datetime))])
+                  _c("span", [_vm._v(_vm._s(job.datetime))]),
+                  _vm._v(" "),
+                  job.active ? _c("span", [_vm._v(" Active ")]) : _vm._e()
                 ])
               }),
               0
@@ -41390,7 +41403,33 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-header" }, [_vm._v("Add new Job")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("p", { staticClass: "mb-4" }, [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                        Commodi corporis minima molestias quasi! Ad alias dolor enim harum,\n                        ipsa mollitia nihil nisi officiis pariatur quam rerum sint tempore ullam velit?"
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-dark btn-block w-100",
+            attrs: { href: "/job/create" }
+          },
+          [_vm._v("Add new job ad")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
