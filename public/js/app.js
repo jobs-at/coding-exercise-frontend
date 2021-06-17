@@ -5025,9 +5025,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5085,7 +5082,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   created: function created() {
     // Get all the jobs
-    this.allJobs = this.jobs; // Get all Company names
+    this.allJobs = this.jobs; // Get all Company names [ Show companies that have jobs ]
 
     this.companies = _toConsumableArray(new Set(this.allJobs.map(function (value) {
       return value['company'];
@@ -41417,7 +41414,18 @@ var render = function() {
                   _vm._v(" "),
                   job.active
                     ? _c("span", { staticClass: "status" })
-                    : _c("span", { staticClass: "status deactive" })
+                    : _c("span", { staticClass: "status deactive" }),
+                  _vm._v(" "),
+                  job.active
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-success text-light w-25 ",
+                          attrs: { href: "/jobs/" + job.id }
+                        },
+                        [_vm._v("Apply")]
+                      )
+                    : _vm._e()
                 ])
               }),
               0

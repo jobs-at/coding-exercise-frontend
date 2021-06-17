@@ -13,8 +13,10 @@
 
 Route::get('/', 'JobController@index')->name('jobs');;
 
+/// Job Detail
 Route::get('/jobs/{job}', 'JobController@getJobDetail')->name('job-detail');
 
+// Job creae form
 Route::get('/job/create', 'JobController@create')->name('job-create')->middleware(['auth','auth.admin']);
 Route::post('/job/create', 'JobController@store')->name('job-store');
 

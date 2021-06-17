@@ -18,98 +18,105 @@
         @include responsive_mobile(){
             margin-top: 1.5rem!important;
         }
-    }
 
+        .jobs-list {
 
-
-    .jobs-list {
-
-        .search {
-            position: relative;
-
-            .search-input {
-
-                &::-webkit-calendar-picker-indicator {
-                    display: none;
-                }
-            }
-
-            .search-icon {
-                position: absolute;
-                top: 50%;
-                right: 12px;
-                transform: translateY(-58%);
-
-                i {
-
-                    &::before {
-                        font-size: 16px;
-                        color: $black;
-                    }
-                }
-            }
-        }
-
-        .jobs-wrapper {
-
-            .job-item {
+            .search {
                 position: relative;
-                display: block;
-                margin: 40px 0;
-                padding: 30px;
-                background-color: $white;
-                box-shadow: 0 3px 6px #00000029;
-                border-radius: 0.25rem;
 
+                .search-input {
 
-                .title {
-                    font-size: 16px;
-                    line-height: 24px;
-                    font-weight: 500;
-                    color: $blue;
-                    margin-bottom: 5px;
-
-                    a {
-                        text-decoration: none;
+                    &::-webkit-calendar-picker-indicator {
+                        display: none;
                     }
                 }
 
-                .company,
-                .location {
-                    font-size: 16px;
-                    line-height: 24px;
-                    font-weight: 400;
-                    margin-bottom: 2px;
-                }
-
-                .description {
-                    font-size: 16px;
-                    line-height: 24px;
-                    font-weight: 400;
-                    margin: 10px 0;
-                    color: $grey;
-                }
-
-                .published {
-                    display: block;
-                    font-size: 16px;
-                    line-height: 24px;
-                    font-weight: 400;
-                    color: $grey;
-                    text-align: right;
-                }
-
-                .status {
+                .search-icon {
                     position: absolute;
-                    top: 5px;
-                    left: 5px;
-                    width: 4px;
-                    height: calc(100% - 10px);
-                    background-color: $green;
-                    border-radius: 10px;
+                    top: 50%;
+                    right: 12px;
+                    transform: translateY(-58%);
 
-                    &.deactive {
-                        background-color: $greyLight;
+                    i {
+
+                        &::before {
+                            font-size: 16px;
+                            color: $black;
+                        }
+                    }
+                }
+            }
+
+            .jobs-wrapper {
+
+                .job-item {
+                    position: relative;
+                    display: block;
+                    margin: 40px 0;
+                    padding: 30px 30px 20px;
+                    background-color: $white;
+                    box-shadow: 0 3px 6px #00000029;
+                    border-radius: 0.25rem;
+
+
+                    .title {
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 500;
+                        color: $blue;
+                        margin-bottom: 5px;
+
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+
+                    .company,
+                    .location {
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        margin-bottom: 2px;
+                    }
+
+                    .description {
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        margin: 10px 0;
+                        color: $grey;
+                    }
+
+                    .published {
+                        position: absolute;
+                        top: 30px;
+                        right: 30px;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        color: $grey;
+                        text-align: right;
+                    }
+
+                    .status {
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        width: 4px;
+                        height: calc(100% - 10px);
+                        background-color: $green;
+                        border-radius: 10px;
+
+                        &.deactive {
+                            background-color: $greyLight;
+                        }
+                    }
+
+                    .btn{
+
+                        @include responsive_mobile(){
+                            width: 50%!important;
+                        }
                     }
                 }
             }

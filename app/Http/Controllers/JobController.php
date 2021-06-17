@@ -59,6 +59,7 @@ class JobController extends Controller
 
     /**
      * Search job
+     * We search only title here
      *
      * @param $keyword
      * @return JobCollection
@@ -84,18 +85,22 @@ class JobController extends Controller
      */
     public function getJobDetail(Job $job)
     {
+        // Resource Using
         return new JobResource($job);
     }
 
 
     /**
      * Show Create job Page
+     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(){
 
+        // Select all the location
         $locations = Job::select('location')->distinct('location')->get();
 
+        // Select all the companies
         $companies = Company::all();
 
         return view('job-register',compact('locations','companies'));
@@ -109,6 +114,7 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+        // Form Validation
         $validData = $request->validate([
             'title'           => 'required|min:5|max:50',
             'company'         => 'required',
