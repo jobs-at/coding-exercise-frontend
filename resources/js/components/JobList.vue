@@ -140,7 +140,6 @@ export default {
     },
     watch: {
         search: function () {
-
         }
     }
 }
