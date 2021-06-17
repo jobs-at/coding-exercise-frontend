@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">jobs.at coding exercise</h1>
+            <h1 class="text-center mt-5 mb-5">jobs.at coding exercise</h1>
         </div>
     </div>
 

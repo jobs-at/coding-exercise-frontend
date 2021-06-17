@@ -1,42 +1,42 @@
 <template>
-    <div class="container">
+    <div class="container search-section">
         <div class="row justify-content-center">
             <div class="col-md-4 sidebar">
+
                 <div class="card mb-4">
                     <div class="card-header">Filter</div>
                     <div class="card-body">
                         <div class="locations mb-4">
-                            <h5>Locations</h5>
-                            <div v-for="location in locations">
-                                <input type="checkbox" :id="location" v-model="selectedLocations" :value="location"
+                            <h4 class="mb-2">Locations</h4>
+                            <div class="form-check" v-for="location in locations">
+                                <input type="checkbox" :id="location" v-model="selectedLocations" :value="location" class="form-check-input"
                                        @change="Search()">
-                                <label :for="location"> {{ location }}</label>
+                                <label class="form-check-label mt-1" :for="location"> {{ location }}</label>
                             </div>
                         </div>
                         <div class="companies mb-4">
-                            <h5>Company</h5>
+                            <h5 class="mb-2">Company</h5>
 
-                            <div v-for="company in companies">
-                                <input type="checkbox" :id="company" v-model="selectedCompanies" :value="company"
+                            <div class="form-check" v-for="company in companies">
+                                <input type="checkbox" :id="company" v-model="selectedCompanies" :value="company" class="form-check-input"
                                        @change="Search()">
-                                <label :for="company"> {{ company }}</label>
+                                <label class="form-check-label mt-1" :for="company"> {{ company }}</label>
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">Add new Job</div>
                     <div class="card-body">
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Commodi corporis minima molestias quasi! Ad alias dolor enim harum,
-                            ipsa mollitia nihil nisi officiis pariatur quam rerum sint tempore ullam velit?</p>
-                        <a class="btn btn-dark btn-block w-100" href="/job/create">Add new job ad</a>
+                        <p class="mb-4"> Ad alias dolor enim harum,ipsa mollitia nihil nisi officiis pariatur quam rerum sint tempore ullam velit?</p>
+                        <a class="btn btn-dark w-100" href="/job/create">Add new job ad</a>
                     </div>
                 </div>
+
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 article">
                 <div class="card">
                     <div class="card-header">Job List</div>
                     <div class="card-body jobs-list">
@@ -53,7 +53,7 @@
                                 <span class="location">{{ job.location }}</span>
                                 <p class="description">{{ job.description }}</p>
                                 <span class="published">{{ job.published_at }}</span>
-                                <span class="status active" v-if="job.active"></span>
+                                <span class="status" v-if="job.active"></span>
                                 <span class="status deactive" v-else="job.active"></span>
                             </div>
                         </div>

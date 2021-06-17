@@ -41191,7 +41191,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container search-section" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-4 sidebar" }, [
         _c("div", { staticClass: "card mb-4" }, [
@@ -41202,10 +41202,10 @@ var render = function() {
               "div",
               { staticClass: "locations mb-4" },
               [
-                _c("h5", [_vm._v("Locations")]),
+                _c("h4", { staticClass: "mb-2" }, [_vm._v("Locations")]),
                 _vm._v(" "),
                 _vm._l(_vm.locations, function(location) {
-                  return _c("div", [
+                  return _c("div", { staticClass: "form-check" }, [
                     _c("input", {
                       directives: [
                         {
@@ -41215,6 +41215,7 @@ var render = function() {
                           expression: "selectedLocations"
                         }
                       ],
+                      staticClass: "form-check-input",
                       attrs: { type: "checkbox", id: location },
                       domProps: {
                         value: location,
@@ -41251,9 +41252,14 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _c("label", { attrs: { for: location } }, [
-                      _vm._v(" " + _vm._s(location))
-                    ])
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label mt-1",
+                        attrs: { for: location }
+                      },
+                      [_vm._v(" " + _vm._s(location))]
+                    )
                   ])
                 })
               ],
@@ -41264,10 +41270,10 @@ var render = function() {
               "div",
               { staticClass: "companies mb-4" },
               [
-                _c("h5", [_vm._v("Company")]),
+                _c("h5", { staticClass: "mb-2" }, [_vm._v("Company")]),
                 _vm._v(" "),
                 _vm._l(_vm.companies, function(company) {
-                  return _c("div", [
+                  return _c("div", { staticClass: "form-check" }, [
                     _c("input", {
                       directives: [
                         {
@@ -41277,6 +41283,7 @@ var render = function() {
                           expression: "selectedCompanies"
                         }
                       ],
+                      staticClass: "form-check-input",
                       attrs: { type: "checkbox", id: company },
                       domProps: {
                         value: company,
@@ -41313,9 +41320,14 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _c("label", { attrs: { for: company } }, [
-                      _vm._v(" " + _vm._s(company))
-                    ])
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label mt-1",
+                        attrs: { for: company }
+                      },
+                      [_vm._v(" " + _vm._s(company))]
+                    )
                   ])
                 })
               ],
@@ -41327,7 +41339,7 @@ var render = function() {
         _vm._m(0)
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-8" }, [
+      _c("div", { staticClass: "col-md-8 article" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [_vm._v("Job List")]),
           _vm._v(" "),
@@ -41404,7 +41416,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   job.active
-                    ? _c("span", { staticClass: "status active" })
+                    ? _c("span", { staticClass: "status" })
                     : _c("span", { staticClass: "status deactive" })
                 ])
               }),
@@ -41421,22 +41433,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card" }, [
+    return _c("div", { staticClass: "card mb-4" }, [
       _c("div", { staticClass: "card-header" }, [_vm._v("Add new Job")]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c("p", { staticClass: "mb-4" }, [
           _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                        Commodi corporis minima molestias quasi! Ad alias dolor enim harum,\n                        ipsa mollitia nihil nisi officiis pariatur quam rerum sint tempore ullam velit?"
+            " Ad alias dolor enim harum,ipsa mollitia nihil nisi officiis pariatur quam rerum sint tempore ullam velit?"
           )
         ]),
         _vm._v(" "),
         _c(
           "a",
-          {
-            staticClass: "btn btn-dark btn-block w-100",
-            attrs: { href: "/job/create" }
-          },
+          { staticClass: "btn btn-dark w-100", attrs: { href: "/job/create" } },
           [_vm._v("Add new job ad")]
         )
       ])

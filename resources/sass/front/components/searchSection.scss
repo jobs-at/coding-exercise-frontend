@@ -1,81 +1,117 @@
-.jobs-list{
+.search-section {
 
-    .search {
-        position: relative;
+    .sidebar{
 
-        .search-input{
+        @include responsive_mobile(){
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
 
-            &::-webkit-calendar-picker-indicator {
-                display: none;
-            }
-        }
-
-        .search-icon {
-            position: absolute;
-            top: 50%;
-            right: 12px;
-            transform: translateY(-58%);
-
-            i {
-
-                &::before {
-                    font-size: 16px;
-                    color: $black;
-                }
+            .card{
+                width: 100%;
             }
         }
     }
 
-    .jobs-wrapper{
+    .article {
 
-        .job-item{
-            display: block;
-            margin: 40px 0;
-            padding: 25px;
-            background-color: $white;
-            box-shadow: 0 3px 6px #00000029;
-            border-radius: 0.25rem;
+        @include responsive_mobile(){
+            margin-top: 1.5rem!important;
+        }
+    }
 
 
-            .title{
-                font-size: 16px;
-                line-height: 24px;
-                font-weight: 500;
-                color: $blue;
-                margin-bottom: 5px;
 
-                a{
-                    text-decoration: none;
+    .jobs-list {
+
+        .search {
+            position: relative;
+
+            .search-input {
+
+                &::-webkit-calendar-picker-indicator {
+                    display: none;
                 }
             }
 
-            .company,
-            .location{
-                font-size: 16px;
-                line-height: 24px;
-                font-weight: 400;
-                margin-bottom: 2px;
-            }
+            .search-icon {
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                transform: translateY(-58%);
 
-            .description{
-                font-size: 16px;
-                line-height: 24px;
-                font-weight: 400;
-                margin: 10px 0;
-                color: $grey;
-            }
+                i {
 
-            .published{
+                    &::before {
+                        font-size: 16px;
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        .jobs-wrapper {
+
+            .job-item {
+                position: relative;
                 display: block;
-                font-size: 16px;
-                line-height: 24px;
-                font-weight: 400;
-                color: $grey;
-                text-align: right;
-            }
+                margin: 40px 0;
+                padding: 30px;
+                background-color: $white;
+                box-shadow: 0 3px 6px #00000029;
+                border-radius: 0.25rem;
 
-            .status{
 
+                .title {
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    color: $blue;
+                    margin-bottom: 5px;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .company,
+                .location {
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    margin-bottom: 2px;
+                }
+
+                .description {
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    margin: 10px 0;
+                    color: $grey;
+                }
+
+                .published {
+                    display: block;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: $grey;
+                    text-align: right;
+                }
+
+                .status {
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    width: 4px;
+                    height: calc(100% - 10px);
+                    background-color: $green;
+                    border-radius: 10px;
+
+                    &.deactive {
+                        background-color: $greyLight;
+                    }
+                }
             }
         }
     }

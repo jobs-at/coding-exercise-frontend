@@ -14056,59 +14056,87 @@ p {
 /* DROPDOWNS */
 /* LAYOUT */
 /* COMPONENTS */
-.jobs-list .search {
+@media only screen and (max-width: 767px) {
+  .search-section .sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .search-section .sidebar .card {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .search-section .article {
+    margin-top: 1.5rem !important;
+  }
+}
+.search-section .jobs-list .search {
   position: relative;
 }
-.jobs-list .search .search-input::-webkit-calendar-picker-indicator {
+.search-section .jobs-list .search .search-input::-webkit-calendar-picker-indicator {
   display: none;
 }
-.jobs-list .search .search-icon {
+.search-section .jobs-list .search .search-icon {
   position: absolute;
   top: 50%;
   right: 12px;
   transform: translateY(-58%);
 }
-.jobs-list .search .search-icon i::before {
+.search-section .jobs-list .search .search-icon i::before {
   font-size: 16px;
   color: #000000;
 }
-.jobs-list .jobs-wrapper .job-item {
+.search-section .jobs-list .jobs-wrapper .job-item {
+  position: relative;
   display: block;
   margin: 40px 0;
-  padding: 25px;
+  padding: 30px;
   background-color: #FFFFFF;
   box-shadow: 0 3px 6px #00000029;
   border-radius: 0.25rem;
 }
-.jobs-list .jobs-wrapper .job-item .title {
+.search-section .jobs-list .jobs-wrapper .job-item .title {
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
   color: #0f73a0;
   margin-bottom: 5px;
 }
-.jobs-list .jobs-wrapper .job-item .title a {
+.search-section .jobs-list .jobs-wrapper .job-item .title a {
   text-decoration: none;
 }
-.jobs-list .jobs-wrapper .job-item .company,
-.jobs-list .jobs-wrapper .job-item .location {
+.search-section .jobs-list .jobs-wrapper .job-item .company,
+.search-section .jobs-list .jobs-wrapper .job-item .location {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   margin-bottom: 2px;
 }
-.jobs-list .jobs-wrapper .job-item .description {
+.search-section .jobs-list .jobs-wrapper .job-item .description {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   margin: 10px 0;
   color: #3c3c3b;
 }
-.jobs-list .jobs-wrapper .job-item .published {
+.search-section .jobs-list .jobs-wrapper .job-item .published {
   display: block;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   color: #3c3c3b;
   text-align: right;
+}
+.search-section .jobs-list .jobs-wrapper .job-item .status {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 4px;
+  height: calc(100% - 10px);
+  background-color: #04a33f;
+  border-radius: 10px;
+}
+.search-section .jobs-list .jobs-wrapper .job-item .status.deactive {
+  background-color: #5c5c5c;
 }
