@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
 use App\Job;
 use App\Http\Resources\v1\Job as JobResource;
 use App\Http\Resources\v1\JobCollection;
@@ -13,6 +14,12 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class JobController extends Controller
 {
+
+    /**
+     * Job Overview
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
         $jobs = Job::all();
@@ -26,7 +33,7 @@ class JobController extends Controller
                 'description'  => $item->description ,
                 'location'     => $item->location ,
                 'active'       => $item->active ,
-                'published_at' => $item->published_at ,
+                'published_at' => Carbon::parse($item->published_at)->format('Y-m-d H:m:s') ,
                 'datetime'     => Carbon::parse($item->created_at)->format('Y-m-d H:m:s') ,
                 'company'      => $item->company->name
             ];
@@ -44,12 +51,7 @@ class JobController extends Controller
      */
     public function getAllJobs()
     {
-        $jobs = Job::query();
-
-        if($keyword = request('search')) {
-            $jobs->where('title' , 'LIKE' , "%{$keyword}%");
-        }
-        $jobs = $jobs->take(5)->get();
+        $jobs = Job::all();
 
         return new JobCollection($jobs);
     }
@@ -63,7 +65,6 @@ class JobController extends Controller
      */
     public function searchJob($keyword)
     {
-
         $jobs = Job::query();
 
         if($keyword != '-') {
@@ -78,6 +79,7 @@ class JobController extends Controller
 
     /**
      * Get job detaol
+     *
      * @param Job $job
      */
     public function getJobDetail(Job $job)
@@ -85,17 +87,43 @@ class JobController extends Controller
         return new JobResource($job);
     }
 
+
+    /**
+     * Show Create job Page
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function create(){
 
         $locations = Job::select('location')->distinct('location')->get();
 
-        return view('job-register',compact('locations'));
+        $companies = Company::all();
+
+        return view('job-register',compact('locations','companies'));
     }
 
+
+    /**
+     * Save Job in the Database
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request)
     {
-        return $request;
+        $validData = $request->validate([
+            'title'           => 'required|min:5|max:50',
+            'company'         => 'required',
+            'active'          => 'required',
+            'location'        => 'required',
+            'description'     => 'required',
+            'published_at'    => 'required'
+        ]);
+
+        // Find Company
+        $company = Company::find($validData['company']);
+
+        // Add the Job to the Company
+        $company->jobs()->create($validData);
+
+        return redirect(route('jobs'));
     }
-
-
 }

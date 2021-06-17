@@ -1,6 +1,5 @@
 // CSS reset
 @import "base/reset";
-@import "helpers/normalize/normalize";
 
 /* BASE */
 @import "base/variables";
@@ -14,12 +13,8 @@
 @import "mixins/responsive";      //      Responsive
 
 /* HELPERS */
-//@import "helpers/datePicker/pickmeup";
-//@import "helpers/owlCarousel/owl.carousel.min";
-//@import "helpers/owlCarousel/owl.theme.default.min";
-//@import "helpers/fancybox/jquery.fancybox";
-@import "helpers/swiper/swiper-bundle.min";
-@import "helpers/normalize/normalize";
+
+
 
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;

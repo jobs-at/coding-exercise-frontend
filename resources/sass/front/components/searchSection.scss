@@ -29,8 +29,52 @@
     .jobs-wrapper{
 
         .job-item{
+            display: block;
+            margin: 40px 0;
+            padding: 25px;
+            background-color: $white;
+            box-shadow: 0 3px 6px #00000029;
+            border-radius: 0.25rem;
 
-            a{
+
+            .title{
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 500;
+                color: $blue;
+                margin-bottom: 5px;
+
+                a{
+                    text-decoration: none;
+                }
+            }
+
+            .company,
+            .location{
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+                margin-bottom: 2px;
+            }
+
+            .description{
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+                margin: 10px 0;
+                color: $grey;
+            }
+
+            .published{
+                display: block;
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+                color: $grey;
+                text-align: right;
+            }
+
+            .status{
 
             }
         }

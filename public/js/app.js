@@ -5027,6 +5027,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -41379,20 +41380,32 @@ var render = function() {
               "div",
               { staticClass: "jobs-wrapper" },
               _vm._l(_vm.allJobs, function(job) {
-                return _c("div", { staticClass: "job-item p-2 mt-2 mb-2" }, [
-                  _c("a", { attrs: { href: "/jobs/" + job.id } }, [
-                    _vm._v(_vm._s(job.title))
+                return _c("div", { staticClass: "job-item" }, [
+                  _c("h3", { staticClass: "title" }, [
+                    _c("a", { attrs: { href: "/jobs/" + job.id } }, [
+                      _vm._v(_vm._s(job.title))
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("h4", [_vm._v(_vm._s(job.company))]),
+                  _c("h4", { staticClass: "company" }, [
+                    _vm._v(_vm._s(job.company))
+                  ]),
                   _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(job.location))]),
+                  _c("span", { staticClass: "location" }, [
+                    _vm._v(_vm._s(job.location))
+                  ]),
                   _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(job.description))]),
+                  _c("p", { staticClass: "description" }, [
+                    _vm._v(_vm._s(job.description))
+                  ]),
                   _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(job.datetime))]),
+                  _c("span", { staticClass: "published" }, [
+                    _vm._v(_vm._s(job.published_at))
+                  ]),
                   _vm._v(" "),
-                  job.active ? _c("span", [_vm._v(" Active ")]) : _vm._e()
+                  job.active
+                    ? _c("span", { staticClass: "status active" })
+                    : _c("span", { staticClass: "status deactive" })
                 ])
               }),
               0

@@ -47,13 +47,14 @@
                         </div>
 
                         <div class="jobs-wrapper">
-                            <div class="job-item p-2 mt-2 mb-2" v-for="job in allJobs">
-                                <a :href="'/jobs/' + job.id">{{ job.title }}</a>
-                                <h4>{{ job.company }}</h4>
-                                <span>{{ job.location }}</span>
-                                <p>{{ job.description }}</p>
-                                <span>{{ job.datetime }}</span>
-                                <span v-if="job.active"> Active </span>
+                            <div class="job-item" v-for="job in allJobs">
+                                <h3 class="title"><a :href="'/jobs/' + job.id">{{ job.title }}</a></h3>
+                                <h4 class="company">{{ job.company }}</h4>
+                                <span class="location">{{ job.location }}</span>
+                                <p class="description">{{ job.description }}</p>
+                                <span class="published">{{ job.published_at }}</span>
+                                <span class="status active" v-if="job.active"></span>
+                                <span class="status deactive" v-else="job.active"></span>
                             </div>
                         </div>
 
@@ -146,6 +147,5 @@ export default {
 
         }
     }
-
 }
 </script>
