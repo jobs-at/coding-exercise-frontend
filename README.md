@@ -40,15 +40,14 @@ side in order to provide a good user experience. The project setup contains [Vue
 which should be used to build the filtering feature on the client side.
 
 3. According to the proposed UI mock-up (see bottom of this section), additional filter options should be provided to the user. Firstly, he/she should
-be able to narrow down the search results based on the selected locations shown in the sidebar. For sake of simplicity
-our jobs can only have one of five locations, namely "Linz", "Vienna", "Graz", "Salzburg" and "Innsbruck". You can hard-code
-these locations in your sidebar. If the user selects locations, the jobs in the list should be narrowed down to just the 
-jobs which fit the selected locations.
+be able to narrow down the search results based on the selected locations shown in the sidebar. All locations from the available jobs should be selectable in the sidebar.
+As you have all jobs with all attributes present on the client, you don't have to load anything extra but do the work on the client side.   
 
 4. Secondly the user should also be able to search for jobs from specific companies. Therefore, add the available companies
 as selectable options in the sidebar. All companies from the database should be shown in the sidebar.
 These should be loaded via a separate HTTP request. You can use the [axios HTTP client](https://github.com/axios/axios), 
 which is already included in the project and registered on the `window` object. So you can use it right away.
+The endpoint to load the companies can be accessed with `/companies`. You can find the definition in the `web.php` if you want to inspect it.    
 If the user selects a company, only the jobs which belong to this company should be shown in the list.
 
 For all the filter options, the list in the UI should automatically update without a page refresh.

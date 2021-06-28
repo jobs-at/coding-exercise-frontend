@@ -22,7 +22,7 @@ class JobControllerTest extends TestCase
         $response = $this->get('/');
 
         $response->assertOk();
-        $response->assertViewHasAll(['jobs' => Job::recent()]);
+        $response->assertViewHasAll(['jobs' => Job::all()->toArray()]);
     }
 
     /**

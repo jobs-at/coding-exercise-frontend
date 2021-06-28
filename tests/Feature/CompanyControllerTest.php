@@ -18,8 +18,8 @@ class CompanyControllerTest extends TestCase
      */
     public function testIndex()
     {
-        factory(Company::class)->create(['name' => 'Company1']);
-        factory(Company::class)->create(['name' => 'Company2']);
+        Company::factory()->create(['name' => 'Company1']);
+        Company::factory()->create(['name' => 'Company2']);
 
         $response = $this->getJson('/companies');
 

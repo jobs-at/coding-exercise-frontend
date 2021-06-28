@@ -15,7 +15,7 @@
         <h1>jobs.at coding exercise</h1>
 
         <div id="app">
-            <job-list :jobs='@json($jobs)'></job-list>
+            <Home :jobs='@json($jobs)' />
         </div>
 
         <script src="{{ mix('/js/app.js') }}" defer></script>
