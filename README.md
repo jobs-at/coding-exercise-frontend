@@ -148,7 +148,9 @@ be the exception.
 
 The project already contains the necessary models `Job.php` and `Company.php` (you can find them in the `app` folder)
 with the attributes from the database. Behind the scenes an OR mapper ([Eloquent](https://laravel.com/docs/8.x/eloquent)) uses these Model classes to ease the communication
-with the database. An HTTP controller named `JobController.php` is provided as starting point. 
+with the database. An HTTP controller named `JobController.php` is provided which responds with the home page and provides all jobs from the database to the frontend. 
+They are automatically provide as a prop to the `Home.vue` component so that you can use it right away in the frontend.
+As mentioned earlier there is also the endpoint to load all the companies and return them as JSON to the frontend. You can use this endpoint to do the AJAX request to fetch all companies.
 Tip: The [Laravel documentation](https://laravel.com/docs/8.x) and the [Vue.js documentation](https://vuejs.org/v2/guide/) will help you along the way as they have a very thorough documentation.
 
 Regarding the frontend, following things should be considered:
