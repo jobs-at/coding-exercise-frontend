@@ -98,7 +98,7 @@ Now, you are already setup to run this project for the first time.
 2. Run `cd coding-exercise` to change to the project folder.
 3. Run `composer install` to install all PHP dependencies.
 4. Copy the content of `.env.example` to `.env` file.
-5. Run `php artisan generate:key` to generate the necessary application key which will be put automatically into you `.env` file. 
+5. Run `php artisan key:generate` to generate the necessary application key which will be put automatically into you `.env` file. 
 6. Run `php artisan serve` to startup the development server.
 7. Open [http://localhost:8000/](http://localhost:8000/) in your browser.
 
