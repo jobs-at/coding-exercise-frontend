@@ -11,5 +11,9 @@
 |
 */
 
+use App\Http\Controllers\JobController;
+
 Route::get('/', 'JobController@index');
 Route::get('/companies', 'CompanyController@index');
+
+Route::post('/jobs', [JobController::class, 'store']);

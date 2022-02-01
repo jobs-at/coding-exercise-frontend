@@ -61,7 +61,8 @@ hard-code the admin password and compare against it in the frontend. This means,
 On the target page with the form there should be according input fields for title, description and location of the job as well as a dropdown list with the
 available companies. When the user fills in all the data and hits the "Save" button, a new job should be saved to the database 
 and the user should get redirected to the home page with the full list of jobs afterwards. All the attributes of the job 
-are mandatory and if the user tries to submit an incomplete form, an error should be shown.
+are mandatory and if the user tries to submit an incomplete form, an error should be shown. The backend functionality for saving
+a job is already provided and you can use it by sending a POST request to `/jobs` and providing the necessary data `title`, `description`, `location` and `company_id`.
 
 Here is a UI mockup of the home page to give you a hint about the layout. 
 [UI-Mockup](https://drive.google.com/open?id=1LNf1n1k8JtmjdAwx_k5vEwj4Cc1WZ37v)
