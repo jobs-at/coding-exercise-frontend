@@ -63,6 +63,9 @@ available companies. When the user fills in all the data and hits the "Save" but
 and the user should get redirected to the home page with the full list of jobs afterwards. All the attributes of the job 
 are mandatory and if the user tries to submit an incomplete form, an error should be shown. The backend functionality for saving
 a job is already provided and you can use it by sending a POST request to `/jobs` and providing the necessary data `title`, `description`, `location` and `company_id`.
+The endpoint returns a HTTP 201 if the job could be saved successfully. You should do the redirect back to home page on the client side with JavaScript.
+In case there is a validation error from the server, a HTTP 422 with the error as JSON payload is returned to the client. You should extract the error from the response
+and show it appropriately in the frontend. 
 
 Here is a UI mockup of the home page to give you a hint about the layout. 
 [UI-Mockup](https://drive.google.com/open?id=1LNf1n1k8JtmjdAwx_k5vEwj4Cc1WZ37v)

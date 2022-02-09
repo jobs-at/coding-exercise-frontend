@@ -48,8 +48,7 @@ class JobControllerTest extends TestCase
         ];
         $response = $this->postJson('/jobs', $data);
 
-        $response->assertCreated();
-        $response->assertJson($data);
+        $response->assertRedirect('/');
 
         $this->assertDatabaseHas('jobs', array_merge($data, [
             'active' => true
