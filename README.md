@@ -164,7 +164,7 @@ only have to comment in the CSS file in the `index.blade.php`.
 * We do not expect a fancy UI design but keep mobile-first and responsiveness in mind when layouting the pages.
 
 ## How to submit
-You should send your submission to [recruiting@jobs.at](mailto:recruiting@jobs.at?subject=[jobs.at%20Coding%20Challenge%20Submision])
+You should send your submission to [recruitment@jobs.at](mailto:recruitment@jobs.at?subject=jobs.at%20Coding%20Challenge%20Submision)
 at latest 1 days before the second interview so that we can take a look at it in advance.
 
 The preferred option is to send us a link to the forked repository in your Github account.
