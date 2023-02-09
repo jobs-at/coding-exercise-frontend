@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Company;
-use App\Job;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -15,7 +14,7 @@ class JobController extends Controller
 {
     public function index(): Factory|View|Application
     {
-        return view('index', ['jobs' => Job::all()->toArray()]);
+        return view('index');
     }
 
     public function store(Request $request): JsonResponse

@@ -1,25 +1,11 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h2>Example component</h2>
 </template>
 
 <script>
-    export default {
-        props: {
-            jobs: {
-                type: Array,
-                required: true
-            }
-        },
-        mounted() {
-            console.log(this.jobs);
-        }
+export default {
+    mounted() {
+        console.log('Hello Vue');
     }
+}
 </script>
